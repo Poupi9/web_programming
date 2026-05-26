@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PageTurner Books — Online Bookstore</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────── -->
+  <header>
+    <div class="header-inner">
+      <div class="logo">&#128218; PageTurner Books</div>
+      <nav>
+        <ul>
+          <li><a href="#welcome">Home</a></li>
+          <li><a href="#books">Books</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="cart-btn" id="cartToggle" aria-label="Open shopping cart">
+        &#128722;
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── CART SIDEBAR ───────────────────────────────────── -->
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">&#10005;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <p class="cart-total">Total: <span id="cartTotal">$0.00</span></p>
+      <button class="btn-checkout">Proceed to Checkout</button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <main>
+
+    <!-- ── WELCOME SECTION ─────────────────────────────── -->
+    <section id="welcome" aria-label="Welcome">
+      <div class="welcome-content">
+        <h1>Welcome to PageTurner Books</h1>
+        <p>Discover your next great read. From timeless classics to modern masterpieces — curated for every kind of reader.</p>
+        <a href="#books" class="btn-primary">Browse Our Collection</a>
+      </div>
+    </section>
+
+    <!-- ── FEATURED BOOKS SECTION ─────────────────────── -->
+    <section id="books" aria-label="Featured books">
+      <h2>Featured Books</h2>
+
+      <div class="search-bar">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="&#128269; Search by title or author..."
+          aria-label="Search books"
+        >
+      </div>
+
+      <div class="book-grid" id="bookGrid">
+
+        <!-- Book 1 -->
+        <article class="book-card" data-title="The Great Gatsby" data-author="F. Scott Fitzgerald">
+          <img src="images/gatsby.svg" alt="The Great Gatsby book cover">
+          <div class="book-info">
+            <h3>The Great Gatsby</h3>
+            <p class="author">F. Scott Fitzgerald</p>
+            <p class="price">$12.99</p>
+            <button class="toggle-desc" aria-expanded="false">Read More &#9660;</button>
+            <p class="description">Set in the glittering Jazz Age on Long Island, this novel follows the mysterious millionaire Jay Gatsby and his obsession with the beautiful Daisy Buchanan. A searing portrait of the American Dream and the hollow pursuit of wealth.</p>
+            <button class="btn-cart"
+              data-id="1"
+              data-title="The Great Gatsby"
+              data-price="12.99">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Book 2 -->
+        <article class="book-card" data-title="To Kill a Mockingbird" data-author="Harper Lee">
+          <img src="images/mockingbird.svg" alt="To Kill a Mockingbird book cover">
+          <div class="book-info">
+            <h3>To Kill a Mockingbird</h3>
+            <p class="author">Harper Lee</p>
+            <p class="price">$13.99</p>
+            <button class="toggle-desc" aria-expanded="false">Read More &#9660;</button>
+            <p class="description">Told through the eyes of young Scout Finch, this Pulitzer Prize-winning novel follows her father Atticus Finch as he defends a Black man falsely accused of a crime in Depression-era Alabama. A story of courage, justice, and moral growth.</p>
+            <button class="btn-cart"
+              data-id="2"
+              data-title="To Kill a Mockingbird"
+              data-price="13.99">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Book 3 -->
+        <article class="book-card" data-title="1984" data-author="George Orwell">
+          <img src="images/1984.svg" alt="1984 book cover">
+          <div class="book-info">
+            <h3>1984</h3>
+            <p class="author">George Orwell</p>
+            <p class="price">$11.99</p>
+            <button class="toggle-desc" aria-expanded="false">Read More &#9660;</button>
+            <p class="description">In a totalitarian future where Big Brother watches every citizen, Winston Smith works for the Party rewriting history. When he dares to think for himself, he embarks on a doomed love affair and rebellion. A chilling masterpiece of political dystopia.</p>
+            <button class="btn-cart"
+              data-id="3"
+              data-title="1984"
+              data-price="11.99">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Book 4 -->
+        <article class="book-card" data-title="Pride and Prejudice" data-author="Jane Austen">
+          <img src="images/pride.svg" alt="Pride and Prejudice book cover">
+          <div class="book-info">
+            <h3>Pride and Prejudice</h3>
+            <p class="author">Jane Austen</p>
+            <p class="price">$10.99</p>
+            <button class="toggle-desc" aria-expanded="false">Read More &#9660;</button>
+            <p class="description">The spirited Elizabeth Bennet meets the proud Mr. Darcy — and their clash of personalities sparks one of literature's greatest love stories. Austen's razor-sharp wit and social commentary have made this novel endlessly beloved for over 200 years.</p>
+            <button class="btn-cart"
+              data-id="4"
+              data-title="Pride and Prejudice"
+              data-price="10.99">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Book 5 -->
+        <article class="book-card" data-title="The Alchemist" data-author="Paulo Coelho">
+          <img src="images/alchemist.svg" alt="The Alchemist book cover">
+          <div class="book-info">
+            <h3>The Alchemist</h3>
+            <p class="author">Paulo Coelho</p>
+            <p class="price">$14.99</p>
+            <button class="toggle-desc" aria-expanded="false">Read More &#9660;</button>
+            <p class="description">A young Andalusian shepherd named Santiago travels from Spain to the Egyptian desert in search of a treasure. Along the way he encounters wisdom, love, and the secrets of the universe. One of the best-selling books in history — a timeless fable about following your dreams.</p>
+            <button class="btn-cart"
+              data-id="5"
+              data-title="The Alchemist"
+              data-price="14.99">Add to Cart</button>
+          </div>
+        </article>
+
+        <!-- Book 6 (Bonus) -->
+        <article class="book-card" data-title="Dune" data-author="Frank Herbert">
+          <img src="images/dune.svg" alt="Dune book cover">
+          <div class="book-info">
+            <h3>Dune</h3>
+            <p class="author">Frank Herbert</p>
+            <p class="price">$16.99</p>
+            <button class="toggle-desc" aria-expanded="false">Read More &#9660;</button>
+            <p class="description">Set in the far future amidst a feudal interstellar society, young Paul Atreides is thrust into a desert world called Arrakis — the only source of the most valuable substance in the universe. An epic of politics, religion, ecology, and destiny. Winner of the Hugo and Nebula Awards.</p>
+            <button class="btn-cart"
+              data-id="6"
+              data-title="Dune"
+              data-price="16.99">Add to Cart</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── CONTACT SECTION ─────────────────────────────── -->
+    <section id="contact" aria-label="Contact us">
+      <div class="contact-inner">
+        <h2>Contact Us</h2>
+        <p class="subtitle">Have a question or a recommendation? We'd love to hear from you.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name">
+            <span class="error-msg" id="nameError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
+            <span class="error-msg" id="emailError" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+            <span class="error-msg" id="messageError" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn-primary">Send Message</button>
+          <p class="form-success" id="formSuccess" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ──────────────────────────────────────────── -->
+  <footer>
+    <p>&copy; 2026 PageTurner Books &nbsp;|&nbsp; <span id="footerClock"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

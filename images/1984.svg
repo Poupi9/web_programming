@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a0000"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <linearGradient id="eye-g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cc2222"/>
+      <stop offset="100%" stop-color="#880000"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="300" fill="url(#g)"/>
+  <!-- Red accent bar on left spine -->
+  <rect x="0" y="0" width="6" height="300" fill="#cc2222"/>
+  <rect x="8" y="8" width="184" height="284" fill="none" stroke="rgba(200,0,0,0.3)" stroke-width="1"/>
+  <!-- Grid lines (surveillance motif) -->
+  <line x1="20" y1="30" x2="180" y2="30" stroke="rgba(255,0,0,0.08)" stroke-width="0.5"/>
+  <line x1="20" y1="60" x2="180" y2="60" stroke="rgba(255,0,0,0.08)" stroke-width="0.5"/>
+  <line x1="20" y1="90" x2="180" y2="90" stroke="rgba(255,0,0,0.08)" stroke-width="0.5"/>
+  <line x1="20" y1="120" x2="180" y2="120" stroke="rgba(255,0,0,0.08)" stroke-width="0.5"/>
+  <line x1="20" y1="150" x2="180" y2="150" stroke="rgba(255,0,0,0.08)" stroke-width="0.5"/>
+  <line x1="50" y1="20" x2="50" y2="170" stroke="rgba(255,0,0,0.05)" stroke-width="0.5"/>
+  <line x1="100" y1="20" x2="100" y2="170" stroke="rgba(255,0,0,0.05)" stroke-width="0.5"/>
+  <line x1="150" y1="20" x2="150" y2="170" stroke="rgba(255,0,0,0.05)" stroke-width="0.5"/>
+  <!-- Eye -->
+  <ellipse cx="100" cy="90" rx="45" ry="25" fill="url(#eye-g)" opacity="0.9"/>
+  <ellipse cx="100" cy="90" rx="45" ry="25" fill="none" stroke="#ff3333" stroke-width="1"/>
+  <circle cx="100" cy="90" r="14" fill="#0a0000"/>
+  <circle cx="100" cy="90" r="10" fill="#cc2222" opacity="0.8"/>
+  <circle cx="105" cy="85" r="3" fill="rgba(255,255,255,0.3)"/>
+  <!-- Eyelid lines -->
+  <path d="M55 90 Q100 60 145 90" fill="none" stroke="#ff3333" stroke-width="0.75" opacity="0.5"/>
+  <path d="M55 90 Q100 120 145 90" fill="none" stroke="#ff3333" stroke-width="0.75" opacity="0.5"/>
+  <!-- Title area -->
+  <rect x="0" y="175" width="200" height="125" fill="rgba(0,0,0,0.7)"/>
+  <line x1="20" y1="182" x2="180" y2="182" stroke="#cc2222" stroke-width="1"/>
+  <text x="100" y="222" text-anchor="middle" fill="#cc2222" font-family="Arial, sans-serif" font-size="52" font-weight="900" letter-spacing="-2">1984</text>
+  <line x1="20" y1="240" x2="180" y2="240" stroke="#cc2222" stroke-width="1"/>
+  <text x="100" y="258" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="Arial, sans-serif" font-size="10" letter-spacing="3">GEORGE ORWELL</text>
+  <text x="100" y="278" text-anchor="middle" fill="rgba(204,34,34,0.5)" font-family="Arial, sans-serif" font-size="8" letter-spacing="1">BIG BROTHER IS WATCHING</text>
+</svg>
