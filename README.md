@@ -1,84 +1,76 @@
-# PageTurner Books — Online Bookstore
+# The Reading Nook — Online Bookstore
 
-**Course:** Web Programming (100458-11001)  
-**Semester:** March 2026  
-**Submission deadline:** 5 June 2026 (Week 14)
+A browser-based e-commerce application built with vanilla HTML, CSS, and JavaScript as part of a Web Programming course project (ESIEA S2, 100458-11001 — due 5 June 2026). The application demonstrates core front-end development principles through a fully functional online bookstore — no frameworks, no libraries, no back-end. Everything runs directly in the browser.
 
----
-
-## Group Members
-
-| Name | Student ID |
-|------|-----------|
-| [Member 1 — fill in] | [ID] |
-| [Member 2 — fill in] | [ID] |
-| [Member 3 — fill in] | [ID] |
-| [Member 4 — fill in] | [ID] |
-| [Member 5 — fill in] | [ID] |
-
----
+We went beyond the base requirements: on top of the four mandatory features, we implemented two bonus features — a live search bar and a full shopping cart.
 
 ## Features
 
-### HTML (Semantic Structure)
-- Semantic elements: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`, `<aside>`
-- **Welcome section** — hero banner with site title and call-to-action
-- **Featured Books section** — 6 book cards (5 required + 1 bonus), each with title, author, description, cover image, price, and buy button
-- **Navigation menu** — sticky header with anchor links to all sections
-- **Contact section** — form with name, email, message fields and submit button
+- **Browse & discover** — hero banner with call-to-action that smooth-scrolls to the book grid; 6 book cards with real cover images, title, author, and price
+- **Show/hide descriptions** — toggle button expands/collapses each book's synopsis; button label and ARIA attribute both update
+- **Live search & filter** — real-time filtering on every keystroke, matching against both title and author *(bonus)*
+- **Shopping cart** — slide-in sidebar with quantity controls (`+`/`−`), running total, animated badge counter, and Escape-to-close *(bonus)*
+- **Contact form** — inline validation on submit; errors clear as the user corrects each field; regex check on email
+- **Live footer clock** — current day, date, and time updated every second via `setInterval`
+- **Responsive layout** — mobile-friendly at 768 px and 480 px breakpoints
 
-### CSS (Styling & Layout)
-- Google Fonts: Playfair Display (headings) + Inter (body)
-- CSS custom properties for consistent theming
-- **Flexbox** — header, cart sidebar, form layout
-- **CSS Grid** — responsive book card grid (`repeat(auto-fill, minmax(220px, 1fr))`)
-- Typography, spacing, background gradients, border-radius, box-shadows
-- **Hover effects** — card lift animation, button color transitions, nav underline slide
-- **Responsive design** — mobile-friendly at 768px and 480px breakpoints
-
-### JavaScript (Interactivity)
-1. **Show/Hide Book Descriptions** — toggle button reveals/hides each book's description
-2. **Dynamic Footer Clock** — live date and time updated every second via `setInterval`
-3. **Form Validation** — inline error messages for empty fields and invalid email format (regex)
-4. **Live Search / Filter** — real-time book filtering by title or author as the user types *(bonus)*
-5. **Add to Cart** — cart sidebar with quantity controls, item list, running total, and badge counter *(bonus — exceeds the "choose one" requirement)*
-
----
-
-## File Structure
+## Project Structure
 
 ```
 web_programming/
-├── index.html        — Main HTML file (semantic structure, all sections)
-├── styles.css        — All styling (layout, typography, hover effects, responsive)
-├── script.js         — All JavaScript features
+├── index.html              # Single HTML file — header, hero, book grid,
+│                           #   cart sidebar, contact form, footer
+├── styles.css              # All styling — layout, typography, hover effects, responsive
+├── script.js               # All JavaScript — 5 features, each separated by comments
 ├── images/
-│   ├── gatsby.svg          — The Great Gatsby cover
-│   ├── mockingbird.svg     — To Kill a Mockingbird cover
-│   ├── 1984.svg            — 1984 cover
-│   ├── pride.svg           — Pride and Prejudice cover
-│   ├── alchemist.svg       — The Alchemist cover
-│   └── dune.svg            — Dune cover
-└── README.md         — This file
+│   ├── gatsby.jpg          # The Great Gatsby cover
+│   ├── mockingbird.jpg     # To Kill a Mockingbird cover
+│   ├── 1984.jpg            # 1984 cover
+│   ├── pride.jpg           # Pride and Prejudice cover
+│   ├── alchemist.jpg       # The Alchemist cover
+│   └── dune.jpg            # Dune cover
+└── README.md               # This file
 ```
 
----
-
-## Division of Tasks
-
-| Task | Member |
-|------|--------|
-| HTML structure & semantic markup | [Member] |
-| CSS layout (Grid/Flexbox) | [Member] |
-| CSS styling (typography, colors, hover effects) | [Member] |
-| JavaScript — toggle descriptions + footer clock | [Member] |
-| JavaScript — form validation + search filter | [Member] |
-| JavaScript — shopping cart feature | [Member] |
-| Book cover artwork (SVG) | [Member] |
-| README & documentation | [Member] |
-
----
+The single-file approach was deliberate: it keeps everything in one place, appropriate for a project of this scale, and makes the full page easy to understand at a glance.
 
 ## How to Run
 
-Open `index.html` directly in any modern browser — no server or build step required.
+Open `index.html` directly in any modern browser — nothing to install.
+
+## Division of Tasks
+
+| Area | Owner |
+|------|-------|
+| HTML structure — semantic markup, sections, ARIA attributes | Geoffrey |
+| JavaScript — show/hide description toggle, footer clock, form validation | Geoffrey |
+| CSS — Grid book layout, Flexbox header & cart sidebar, responsive breakpoints (768 px / 480 px), custom properties, hover animations, Google Fonts | Adrien |
+| JavaScript — live search filter, shopping cart (`escapeHtml`, badge animation) | Dimitri |
+| Book cover images — sourcing and processing | Dimitri |
+
+## Web Concepts Demonstrated
+
+| Concept | Where |
+|---------|-------|
+| Semantic HTML | `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`, `<aside>` in `index.html` |
+| CSS Grid | Responsive book card grid — `repeat(auto-fill, minmax(220px, 1fr))` in `styles.css` |
+| CSS Flexbox | Header layout, cart sidebar, and form layout in `styles.css` |
+| CSS custom properties | Consistent colour and spacing theming via variables in `styles.css` |
+| DOM manipulation | Show/hide descriptions, cart state sync, live search results in `script.js` |
+| XSS prevention | `escapeHtml()` sanitises all user-supplied strings before `innerHTML` injection |
+| Form validation | Regex email check with inline error messages in `script.js` |
+| Timers | Live footer clock via `setInterval` in `script.js` |
+| Event listeners | Click, input, keydown, and submit events throughout `script.js` |
+
+## Page Navigation
+
+```
+index.html
+    ├── #home      — Hero banner → smooth-scroll to book grid
+    ├── #books     — Featured book grid
+    │       ├── Search bar → filters cards in real time
+    │       ├── Book card → toggle description
+    │       └── "Add to Cart" → updates cart sidebar
+    ├── #contact   — Contact form with inline validation
+    └── Cart sidebar (any page) → quantity controls → running total → Escape to close
+```
