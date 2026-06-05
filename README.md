@@ -1,6 +1,6 @@
 # The Reading Nook — Online Bookstore
 
-A browser-based e-commerce application built with vanilla HTML, CSS, and JavaScript as part of a Web Programming course project (ESIEA S2, 100458-11001 — due 5 June 2026). The application demonstrates core front-end development principles through a fully functional online bookstore — no frameworks, no libraries, no back-end. Everything runs directly in the browser.
+A browser-based e-commerce application built with vanilla HTML, CSS, and JavaScript as part of a Web Programming course project. The application demonstrates core front-end development principles through a fully functional online bookstore — no frameworks, no libraries, no back-end. Everything runs directly in the browser.
 
 We went beyond the base requirements: on top of the four mandatory features, we implemented two bonus features — a live search bar and a full shopping cart.
 
